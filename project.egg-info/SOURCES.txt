@@ -1,0 +1,15 @@
+setup.py
+auctionsSp/__init__.py
+auctionsSp/agents.py
+auctionsSp/items.py
+auctionsSp/log.py
+auctionsSp/middleware.py
+auctionsSp/pipelines.py
+auctionsSp/settings.py
+auctionsSp/spiders/CourtAuctions_spider.py
+auctionsSp/spiders/__init__.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt

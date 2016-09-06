@@ -1,0 +1,770 @@
+2016-09-04 19:55:41 [scrapy] INFO: Scrapy 1.1.2 started (bot: auctionsSp)
+2016-09-04 19:55:41 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'auctionsSp.spiders', 'FEED_URI': 'file:///Users/sabbidis/python/auctionsSp/items/auctionsSp/CourtAuctions/c6b3a89472c811e6ac780026bb5bbf98.jl', 'LOG_LEVEL': 'INFO', 'SPIDER_MODULES': ['auctionsSp.spiders'], 'BOT_NAME': 'auctionsSp', 'USER_AGENT': 'BlackBerry8320/4.2.2 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/100', 'LOG_FILE': 'logs/auctionsSp/CourtAuctions/c6b3a89472c811e6ac780026bb5bbf98.log', 'DOWNLOAD_DELAY': 1}
+2016-09-04 19:55:41 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-04 19:55:41 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'auctionsSp.middleware.CustomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-04 19:55:41 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-04 19:55:42 [scrapy] INFO: Enabled item pipelines:
+['auctionsSp.pipelines.MongoPipeline']
+2016-09-04 19:55:42 [scrapy] INFO: Spider opened
+2016-09-04 19:55:42 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-09-04 19:56:06 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=999> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:08 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=997> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:11 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=995> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:13 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=993> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:16 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=991> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:18 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=989> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:20 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=987> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:23 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=985> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:24 [scrapy] ERROR: Error caught on signal handler: <bound method ?.item_scraped of <scrapy.extensions.feedexport.FeedExporter object at 0x103cdc350>>
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/twisted/internet/defer.py", line 149, in maybeDeferred
+    result = f(*args, **kw)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/pydispatch/robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/extensions/feedexport.py", line 211, in item_scraped
+    slot.exporter.export_item(item)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/exporters.py", line 90, in export_item
+    itemdict = dict(self._get_serialized_fields(item))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/exporters.py", line 65, in _get_serialized_fields
+    field_iter = six.iterkeys(item)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/six-1.9.0-py2.7.egg/six.py", line 570, in iterkeys
+    return iter(d.iterkeys(**kw))
+AttributeError: 'NoneType' object has no attribute 'iterkeys'
+2016-09-04 19:56:27 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=983> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:30 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=981> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:32 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=979> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:35 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=977> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:37 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=975> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:41 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=973> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:42 [scrapy] INFO: Crawled 16 pages (at 16 pages/min), scraped 1 items (at 1 items/min)
+2016-09-04 19:56:43 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=971> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:45 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=969> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:47 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=967> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:50 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=965> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:52 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=963> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:53 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=961> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:55 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=959> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:56:57 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=957> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:00 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=955> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:02 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=953> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:04 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=951> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:06 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=949> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:09 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=947> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['select_court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:11 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=945> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:14 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=943> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:16 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=941> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:19 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=939> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:21 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=937> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:23 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=935> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:24 [scrapy] INFO: Received SIGTERM, shutting down gracefully. Send again to force 
+2016-09-04 19:57:24 [scrapy] INFO: Closing spider (shutdown)
+2016-09-04 19:57:25 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=933> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:27 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=931> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:30 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=929> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:33 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=927> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:35 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=925> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:38 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=923> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:40 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=921> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:42 [scrapy] INFO: Crawled 42 pages (at 26 pages/min), scraped 1 items (at 0 items/min)
+2016-09-04 19:57:43 [scrapy] ERROR: Spider error processing <GET https://deltio.tnomik.gr/details?id=919> (referer: https://deltio.tnomik.gr)
+Traceback (most recent call last):
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "auctionsSp/spiders/CourtAuctions_spider.py", line 49, in parse_dir_contents
+    item['court'] = option.xpath('text()').extract_first(default='')
+  File "/Users/sabbidis/Library/Python/2.7/lib/python/site-packages/scrapy/item.py", line 63, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'AuctionsspItem does not support field: select_court'
+2016-09-04 19:57:44 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 37696,
+ 'downloader/request_count': 101,
+ 'downloader/request_method_count/GET': 101,
+ 'downloader/response_bytes': 746568,
+ 'downloader/response_count': 101,
+ 'downloader/response_status_count/200': 43,
+ 'downloader/response_status_count/301': 1,
+ 'downloader/response_status_count/302': 57,
+ 'dupefilter/filtered': 56,
+ 'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2016, 9, 4, 17, 57, 44, 447167),
+ 'item_scraped_count': 1,
+ 'log_count/ERROR': 42,
+ 'log_count/INFO': 10,
+ 'request_depth_max': 1,
+ 'response_received_count': 43,
+ 'scheduler/dequeued': 101,
+ 'scheduler/dequeued/memory': 101,
+ 'scheduler/enqueued': 1003,
+ 'scheduler/enqueued/memory': 1003,
+ 'spider_exceptions/KeyError': 41,
+ 'start_time': datetime.datetime(2016, 9, 4, 17, 55, 42, 133962)}
+2016-09-04 19:57:44 [scrapy] INFO: Spider closed (shutdown)
